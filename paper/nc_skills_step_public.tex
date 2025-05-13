@@ -1,0 +1,151 @@
+\documentclass[11pt, a4paper, leqno]{article}
+\usepackage{a4wide}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{float, afterpage, rotating, graphicx}
+\usepackage{epstopdf}
+\usepackage{longtable, booktabs, tabularx}
+\usepackage{fancyvrb, moreverb, relsize}
+\usepackage{eurosym, calc}
+\usepackage{amsmath, amssymb, amsfonts, amsthm, bm}
+\usepackage{caption}
+\usepackage{mdwlist}
+\usepackage{xfrac}
+\usepackage{setspace}
+\usepackage[dvipsnames]{xcolor}
+\usepackage{subcaption}
+\usepackage{minibox}
+\usepackage[flushleft]{threeparttable} % for tablenotes
+\usepackage{multirow} % tables
+\usepackage{dsfont} % for bold 1 in math
+\usepackage{tikz} % Graphs
+\usepackage{xcolor}
+\usetikzlibrary{decorations.pathreplacing,calligraphy} % Curly calligraphic braces in tikzpicture
+
+
+\usepackage[
+    natbib=true,
+    style=apa,
+    maxcitenames=3,
+    useprefix=false,
+    sortcites=true,
+    backend=biber,
+    date=year,
+    isbn=false,url=false,eprint=false,
+    labeldateparts=true,
+    uniquelist=minyear
+]{biblatex}
+\AtBeginDocument{\toggletrue{blx@useprefix}}
+\AtBeginBibliography{\togglefalse{blx@useprefix}}
+\setlength{\bibitemsep}{1.5ex}
+\addbibresource{Schooling_manually_capitalized_version.bib}
+
+\AtEveryBibitem{
+	\clearlist{publisher}
+	\clearlist{location}
+	\clearfield{note}
+	\clearfield{howpublished}
+}
+
+
+
+\usepackage[unicode=true]{hyperref}
+\hypersetup{
+    colorlinks=true,
+    linkcolor=black,
+    anchorcolor=black,
+    citecolor=NavyBlue,
+    filecolor=black,
+    menucolor=black,
+    runcolor=black,
+    urlcolor=NavyBlue
+}
+
+
+\widowpenalty=10000
+\clubpenalty=10000
+
+\setlength{\parskip}{1ex}
+\setlength{\parindent}{0ex}
+\setstretch{1.5}
+
+% JEL codes command
+\providecommand{\JEL}[1]
+{
+	\small
+	\textbf{JEL codes:} #1
+}
+% Keywords command
+\providecommand{\keywords}[1]
+{
+	\small
+	\textbf{Keywords:} #1
+}
+
+
+% Manually set \thanks symbols
+\makeatletter
+\renewcommand*{\@fnsymbol}[1]{%
+	\ensuremath{%
+		\ifcase#1 \or \star \or * \else \@alph{\numexpr#1-2\relax} \fi%
+	}%
+}
+\makeatother
+
+
+\begin{document}
+
+\title{The effect of compulsory education on non-cognitive skills: Evidence from low- and middle-income countries\thanks{We would like to thank Lucia Gomez Llactahuamani for her excellent research assistance. Funding by the Deutsche Forschungsgemeinschaft (DFG, German Research Foundation) through CRC TR 224 (Project A05) and Germany’s Excellence Strategy – EXC 2126/1–390838866 as well as through NSF Award 2201888 is gratefully acknowledged.}}
+
+\author{Antonia K. Entorf\thanks{Corresponding author. E-mail address: antonia.entorf@uni-bonn.de} \thanks{University of Bonn, Regina-Pacis-Weg 3, 53113 Bonn, Germany} \thanks{ECONtribute, Niebuhrstraße 5, 53113 Bonn, Germany} \and Thomas J. Dohmen\footnotemark[3] \footnotemark[4] \thanks{Maastricht University, Tongersestraat 53, 6211 LM Maastricht, Netherlands} \thanks{IZA Institute of Labor Economics, Schaumburg-Lippe-Straße 5-9, 53113 Bonn, Germany}}
+
+\date{\today}
+
+\maketitle
+
+
+\begin{abstract}
+    Personality traits, preferences, and attitudes significantly influence labor market outcomes, and these non-cognitive skills are shaped by the social environment. While curriculum interventions can impact these skills, the effect of compulsory education on non-cognitive skills is less well understood. This study investigates the impact of extending compulsory education by examining educational reforms in four low- and middle-income countries. Utilizing cross-sectional data from the World Bank's 2012/2013 initiative, we analyze the within-country variation in compulsory education years. Our findings indicate that increased compulsory education decreases emotional stability, grit, hostile attribution bias, patience, and willingness to take risks, while enhancing openness to experience and alternative solution or consequential thinking.
+\end{abstract}
+
+
+%TC:ignore
+\JEL{J24, I20, I26, D91}
+
+\keywords{Non-cognitive skills, Education, Wage returns, Personality, Economic preferences}
+%TC:endignore
+
+\clearpage
+
+\section{Introduction} % (fold) \label{sec:introduction}
+\input{sections/introduction.tex}
+
+\section{Compulsory schooling reforms} \label{sec:reforms}
+\input{sections/reforms.tex}
+
+\section{Data} \label{sec:data}
+\input{sections/data.tex}
+
+
+\section{Empirical strategy} \label{sec:emp_strategy}
+\input{sections/empirical_strategy.tex}
+
+\section{Results} \label{sec:results}
+\input{sections/results.tex}
+
+\section{Discussion} \label{sec:discussion}
+\input{sections/discussion.tex}
+
+
+\section{Conclusion} \label{sec:conclusion}
+\input{sections/conclusion.tex}
+
+\setstretch{1}
+\printbibliography
+\setstretch{1.5}
+
+
+\appendix
+\input{sections/appendix.tex}
+
+\end{document}

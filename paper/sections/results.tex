@@ -1,0 +1,115 @@
+\subsection{Main results} \label{subsec:res_main}
+
+The results from our empirical approach, as described in Section \ref{subsec:emp_main}, are presented in Tables \ref{tab:res_years_educ} to \ref{tab:res_prefs}. The dependent variables are grouped into three categories: education, standardized non-cognitive skills, and binary non-cognitive skills. We use three alternative time windows around the pivotal cohorts to test the robustness of our findings.
+
+To guide the choice of an optimal window size, we rely on the Python package \textit{rdrobust} by \citet{calonico_rdrobust_2023}, which provides the Mean Squared Error (MSE)-optimal bandwidth. For most outcomes, the optimal bandwidth is approximately 3 years (see Table \ref{tab:bandwidth} in the Appendix). This bandwidth selection accounts for uniform weights, clustered standard errors, and the inclusion of covariates. However, the package does not provide the option to estimate separate trends for each reform. As the reforms occurred at different points in time, individuals in our sample were surveyed at varying ages. As a result, estimating separate cohort trends for each reform is essential. Because estimating multiple cohort trends requires a larger sample size, we prioritize a larger window size. To minimize potential confounding factors, we base our main interpretation on the smallest possible bandwidth that remains larger than the MSE-optimal bandwidth. Thus, we choose the 5-year window as our preferred window size, balancing sample size and distance to the reform year best. Nevertheless, we present results for the 3-, 5-, and 10-year samples to assess the robustness of our findings.
+
+In addition to varying the bandwidth, we present results from different model specifications to, further, assess the robustness of our findings. Columns (1), (3), and (5) report estimates from a linear model with a linear cohort trend. Columns (2), (4), and (6) show estimates from a quadratic model, while column (7) presents estimates from a cubic model. Given the discrete nature of the cohort variable and the relatively short time periods around the reforms, we prioritize model simplicity to mitigate the risk of overfitting cohort trends. For this reason, we consider the linear model the most appropriate specification, particularly for the preferred 5-year sample. Therefore, the linear model with the 5-years sample is our preferred specification.
+
+
+
+\begin{table}[htbp]
+	\caption{Years of education}
+	\label{tab:res_years_educ}
+	\centering
+	\begin{threeparttable}
+		\footnotesize
+		\input{../bld/python/tables/with_partially_treated/common_trend/results_with_partially_treated_years_educ_tabular.tex}
+		\begin{tablenotes}
+			\footnotesize
+			\item \textit{Notes:} Estimated average treatment effects of compulsory schooling reforms. The sample is restricted to individuals who are older than 23 and to the following reforms: Bolivia 1994, Colombia 1991, Ghana 1961, Ghana 1987, Vietnam 1991. The \textit{linear/quadratic/cubic} model consists of reform specific \textit{linear/quadratic/cubic} cohort trends. Standard errors are cluster robust on reform $\times$ birth-year level. \textit{Data: STEP} $^{***} p < 0.01, ^{**} p < 0.05, ^{*} p < 0.1$
+		\end{tablenotes}
+	\end{threeparttable}
+\end{table}
+
+
+As expected, we find a positive effect of compulsory schooling reforms on years of education (Table \ref{tab:res_years_educ}). The estimate from our preferred model indicates that the reforms increased years of education by 0.95 years on average.  Given that the average increase in mandatory education across the reforms under study is 4 years, this result suggests a meaningful impact. The estimates remain consistent across most specifications, with the exception of the quadratic model in the 10-year sample, where the effect size is slightly smaller. Notably, the coefficients in the second row correspond to the first four treated cohorts in Vietnam. In line with expectations, we observe no significant increase in years of education for these cohorts, as the reform effect at the cutoff is effectively zero (-0.01) in our preferred specification, reflecting the gradual implementation of the reform.
+
+The primary focus of our analysis is the effect of compulsory schooling reforms non-cognitive skills. Our estimates show that while increased years of compulsory education do not affect all non-cognitive skills, they do influence most of them. The results from our preferred specification using the 5-year sample are summarized in Figure \ref{fig:main_results}.\footnote{Estimates for each reform separately are provided in Table \ref{tab:single_reforms}.} More detailed results can be found in Tables \ref{tab:res_ncogn} and \ref{tab:res_prefs}.
+
+Although point estimates and significance levels vary depending on the sample size and specification, except for the positive estimate for patience in column (4), significant estimates consistently show the same sign across different models. For the reasons outlined above, we base our main interpretation on the results from the linear model and the 5-years sample.
+
+
+\begin{figure}[htbp]
+	\centering
+	\caption{Effect of increasing mandatory education on non-cognitive skills}
+	\label{fig:main_results}
+	\includegraphics[width = 0.95\columnwidth, trim = {1.5cm 2cm 0.5cm 5.1cm}, clip]{../bld/python/figures/results_figure_two_xaxis.png}
+	\caption*{\footnotesize \textit{Notes:} Estimated average treatment effects of compulsory schooling reforms. Point estimates and 95\%-confidence intervals are displayed. The sample is restricted to individuals who are older than 23 and to the following reforms: Bolivia 1994, Colombia 1991, Ghana 1961, Ghana 1987, Vietnam 1991. The estimates stem from the 5 years sample and the \textit{linear model} which has linear cohort trends. Standard errors are cluster robust on reform $\times$ birth-year level. \textit{Data: STEP}}
+\end{figure}
+
+\begin{table}[htbp]
+	\caption{Personality traits and behaviors}
+	\label{tab:res_ncogn}
+	\centering
+	\begin{threeparttable}
+		\footnotesize
+		\input{../bld/python/tables/with_partially_treated/common_trend/results_with_partially_treated_ncogn_skills_tabular.tex}
+		\begin{tablenotes}
+			\footnotesize
+			\item \textit{Notes:} Estimated average treatment effects of compulsory schooling reforms. Measures are standardized. The sample is restricted to individuals who are older than 23 and to the following reforms: Bolivia 1994, Colombia 1991, Ghana 1961, Ghana 1987, Vietnam 1991. The \textit{linear/quadratic/cubic} model consists of reform specific \textit{linear/quadratic/cubic} cohort trends. Standard errors are cluster robust on reform $\times$ birth-year level. \textit{Data: STEP} $^{***} p < 0.01, ^{**} p < 0.05, ^{*} p < 0.1$
+		\end{tablenotes}
+	\end{threeparttable}
+\end{table}
+
+\begin{table}[htbp]
+	\caption{Preferences}
+	\label{tab:res_prefs}
+	\centering
+	\begin{threeparttable}
+		\footnotesize
+		\input{../bld/python/tables/with_partially_treated/common_trend/results_with_partially_treated_preferences_binary_tabular.tex}
+		\begin{tablenotes}
+			\footnotesize
+			\item \textit{Notes:} Estimated average treatment effects of compulsory schooling reforms. Measures are binary. The sample is restricted to individuals who are older than 23 and to the following reforms: Bolivia 1994, Colombia 1991, Ghana 1961, Ghana 1987, Vietnam 1991. The \textit{linear/quadratic/cubic} model consists of reform specific \textit{linear/quadratic/cubic} cohort trends. Standard errors are cluster robust on reform $\times$ birth-year level. \textit{Data: STEP} $^{***} p < 0.01, ^{**} p < 0.05, ^{*} p < 0.1$
+		\end{tablenotes}
+	\end{threeparttable}
+\end{table}
+
+
+We find that individuals affected by the reform experience a reduction in emotional stability by 0.23 standard deviations, while openness to experience increases by 0.14 standard deviations. The quadratic model suggests an increase in conscientiousness by 0.28 standard deviations and in agreeableness by 0.37 standard deviations, although these estimates are not statistically significant in our preferred linear model.
+The reforms also improve decision-making patterns by 0.10 standard deviations, reduce grit by 0.14 standard deviations, and lower hostile attribution bias by 0.21 standard deviations. Regarding economic preferences, we find a negative effect of the reforms on both patience and willingness to take risks. Being affected by a reform reduces the probability to be patient by 6\% and the probability to be willing to take risk by 5\%.
+
+The magnitude of the effects we find is in line with those reported in other studies. For example, \citet{alan_ever_2019} show that a curriculum intervention increased students' self-reported grit by 0.29 to 0.35 standard deviations, depending on the sample. Similarly, \citet{dasgupta_effects_2022} find that extraversion and conscientiousness among men marginally admitted to a selective college decrease by 0.48 and 0.56 standard deviations, respectively. Another relevant example is the study by \citet{dahmann_cross-fertilizing_2018}, which finds that Germany's G8 school reform reduces emotional stability by approximately one-third of a standard deviation. In comparison, our estimates---ranging from 0.1 to 0.23 standard deviations in absolute terms under our preferred specification---are of a similar order of magnitude, leaning towards the more modest end of the spectrum.
+
+In summary, the reforms expanding compulsory education do not have a significant impact on agreeableness, conscientiousness, or extraversion according to our preferred specification and sample. However, the reforms lead to a decrease in emotional stability, grit, hostile attribution bias, patience, and willingness to take risks while increasing openness to experience and decision-making patterns, i.e., alternative solution and consequential thinking. The most consistent findings across samples and specifications are the increases in openness to experience and decision-making patterns, as well as the decrease in hostile attribution bias---effects that align with expectations from the literature. Additionally, we can confirm that the reforms lead to an increase in years of education.
+
+\subsection{Robustness of results}
+To assess the robustness of our results, we conduct several additional analyses, which are described in this section. Before presenting the results of our robustness checks, we first run a placebo test. Using our preferred specification and sample, we shift all pivotal cohorts seven years forward (Table \ref{tab:placebo}). This seven-year shift ensures that we maintain a sufficient number of observations and avoid overlap with any other compulsory schooling reforms during the period considered. As expected, the significant effects identified in our main analysis disappear in the placebo specifications.
+
+As a first robustness check, we classify individuals born one year before the pivotal cohort as partially treated. This adjustment addresses the concern that using calendar-year cutoffs to define treatment and control groups might result in partially treated cohorts within the control group. This could occur if some children enter primary school late or repeat a grade.\footnote{
+	The data set would allow us to use birth month instead of birth year to determine treatment based on school entry cutoff. However, we decided against this for several reasons: (1) Cutoff dates at the time when reforms were implemented are not known, and it is unclear whether they are the same as today. (2) Even if historical cutoff dates matched current ones, they may not have been strictly enforced. (3) Some individuals did not report their birth month, likely because they did not know their exact birth date. We explored how our results change when applying the best available guesses for cutoff dates. With these dates, our main findings remain largely robust.
+}
+It is important to note that excluding cohorts hinders the comparability of treated and untreated individuals. Column (1) in Tables \ref{tab:robust_ncogn} and \ref{tab:robust_prefs} show the results when we classify the last ``unaffected'' cohort as partially treated (and treated), similar to our approach for the first four cohorts in Vietnam. With this approach, we observe similar effects on emotional stability, grit, hostile attribution bias, and patience. The estimated effects on openness to experience, decision-making patterns, and willingness to take risks are not significantly different from zero, though all estimates have the same sign.
+
+Second, we use an inflexible model to, further, test the robustness to alternatively modeling cohort trends. The inflexible model imposes the same slope before and after the cutoff. Intuitively, this restriction implies that the additional compulsory education only affects skills' levels but not the rate of skill development. Estimates from this model are provided in column (2) of Tables \ref{tab:robust_ncogn} and \ref{tab:robust_prefs}. The significance levels differ for some non-cognitive skills, but the point estimates are similar to our main results.
+
+Third, we test whether the main results in Figure \ref{fig:main_results} are robust to excluding observations from one reform at a time, to check if any effect is primarily driven by a specific reform. Some findings---such as those related to emotional stability and hostile attribution bias---are more robust than other findings---such as the results for willingness to take risks---when a single reform is excluded. However, all findings remain qualitatively robust (see Figure \ref{fig:leave_one_out}).
+
+
+Finally, we account for multiple hypothesis testing by applying a sharpened False Discovery Rate (FDR) control, using the Stata implementation by \citet{anderson_multiple_2008}, which is based on the algorithm of \citet{benjamini_adaptive_2006}. The original p-values, along with the q-values obtained from the sharpened FDR control, are presented in Table \ref{tab:qvalues}. Overall, the robustness checks support the conclusion that compulsory education has an effect on non-cognitive skills.
+
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\subsection{Returns to skills and labor market outcomes}
+
+In this section we explore whether the compulsory schooling reforms improved skills that are valued in the labor market. A priori, it is not clear whether an increase or decrease in a particular non-cognitive skill will be rewarded in the labor market. To assess this, we estimate wage returns to skills to gauge whether these were affected in a way that could increase productivity in the labor market. For this purpose, we estimate augmented Mincer wage regressions with the full sample of working individuals in Bolivia, Colombia, Ghana, and Vietnam. Furthermore, we investigate if labor market outcomes differ across control and treatment groups.
+
+The Mincer wage regression estimates are shown in Table \ref{tab:wage_returns}. In line with previous studies, we find a gender wage gap of about 20\%, a concave effect of age and a positive effect of education on wages. Importantly, the findings from the augmented Mincer wage regression in column (6) show that an increase in openness to experience and a decrease in hostile attribution bias are positively related to wages, while a reduction in willingness to take risks is negatively related to wages. For the other non-cognitive skills that are affected by the expansion of mandatory education---emotional stability, decision-making patterns, grit, and patience---we find neither a positive nor a negative relationship with wages. Extraversion is positively related to wages but not affected by the reforms. Notably, all self-reported cognitive skills (reading, writing, and numeracy) are positively related to wages.
+
+
+Furthermore, these descriptive results suggest that compulsory schooling reforms affect wages by increasing years of education (column 1). This is partly driven by changes in cognitive skills, as evidenced by the lower correlation between years of education and wages when cognitive skills are controlled for (see columns (2) and (6)). However, changes in non-cognitive skills do not appear to mediate the relationship between years of education and wages, since controlling for non-cognitive skills does not alter the coefficient of years of education (see columns (3) to (5)).
+
+To estimate the log wage change for an average individual affected by a reform, we use model (6). Specifically, we multiply the wage returns from model (6) that are significantly different from zero by the significant changes in skills and years of education, which are estimated using our preferred specification with the 5-year sample (column (1) in Tables \ref{tab:res_ncogn} and \ref{tab:res_prefs}). The resulting predicted log wage change is 0.091.
+%\input{../bld/python/other/predicted_wage_change_all_skills.tex}
+The log wage change due to affected non-cognitive skills is
+%\input{../bld/python/other/predicted_wage_change_non-cognitive_skills.tex}
+0.036, with the main driver being reduced hostile attribution bias. This suggests that approximately 40\% of the overall predicted log wage change can be attributed to the changes in non-cognitive skills.
+
+In addition to predicting wage changes based on changes in skills and years of education, we estimate the reform effects on labor market outcomes by running the same regression as in equation \ref{eq:rdd}, but with wages, an indicator for currently working, and an indicator for being a wage worker versus self- or family-employed as dependent variables. It is important to recall that the individuals in the treatment group are younger than those in the control group. Thus, even though we control for age, the labor market outcomes for treated individuals might differ due to unobserved factors that are related to age but not perfectly explained by it. Since personality traits and preferences tend to remain stable within the limited age range considered, cohort trends effectively capture age-related effects in labor market outcomes.
+
+The results from this exercise are presented in Table \ref{tab:lm_outcomes}. In column (1) of Table \ref{tab:lm_outcomes}---corresponding to our preferred specification, we find no significant differences in hourly earnings, the probability to be currently working, or the likelihood of being a wage worker versus self- or family-employed between the control and treatment groups. However, using the quadratic model or the 3-years sample (Columns (2) to (4)), we find a significant increase in wages for treated individuals.
+Additionally, we find no systematic differences in the occupations of individuals in the treatment group compared to those in the control group (see Figure \ref{fig:occupations}). Any small differences in occupation groups 1 to 4 can likely be attributed to the younger age of treated individuals.

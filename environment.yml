@@ -1,0 +1,29 @@
+---
+name: nc_skills_step_public
+channels: [conda-forge, nodefaults]
+dependencies:
+  - conda-lock
+  - ipykernel
+  - jupyterlab
+  - pandas=2.0.0
+  - pdbpp
+  - pip >=21.1
+  - plotly>=5.13.0
+  - pre-commit
+  - pytask-latex
+  - pytask-parallel
+  - pytask=0.3.1
+  - pytask-stata
+  - pytest
+  - pytest-cov
+  - pytest-xdist
+  - python-graphviz
+  - python=3.11
+  - pyyaml
+  - setuptools_scm
+  - statsmodels
+  - toml
+  - openpyxl
+  - pylatex=1.4.1
+  - scikit-learn
+  - pip: [-e ., kaleido, rdrobust==1.2.1]

@@ -1,0 +1,56 @@
+\subsection{STEP Program}
+
+The data used in this study are drawn from the World Bank’s Skills Towards Employability and Productivity (STEP) Measurement Program, the first initiative to systematically measure skills in low- and middle-income countries. The program aims to provide policy-relevant data to better understand labor market skill requirements. The STEP program includes both a household-based and an employer-based survey. For our analysis, we use data from the household survey.
+
+The household-survey introduces a distinct module that makes the data particularly suitable for our analysis. It contains an extensive array of non-cognitive skills measures. The survey items used to measure personality and behaviors were carefully designed and selected by a multidisciplinary team of social scientists, including economists and psychologists. The guiding principles of the selection process included ``the applicability and comprehension of the items in low-literacy cultures where people have little or no experience answering self-reported questions'' \parencite[][p. 29]{pierre_step_2014}. Moreover, the items were designed brief, based on prior evidence of scale reliability and validity, and on prior evidence of predictive validity. Besides measures of non-cognitive skills, the survey contains a direct assessment of reading proficiency developed by the Educational Testing Service (ETS). The assessment is scored on the same scale as the OECD's PIAAC data. Since cognitive skills are not the focus of our analysis, we only provide an analysis of these in the Appendix section \ref{sec:app_add_outcomes}.
+
+The STEP Program currently includes household data from thirteen countries: Armenia, Bolivia, Colombia, Georgia, Ghana, Kenya, Laos, Sri Lanka, Macedonia, Philippines, Ukraine, Vietnam, and  Yunnan Province (China).\footnote{The World Bank's plan is to add more countries.} Data collection occurred in 2012 and 2013, except for the Philippines, where a different survey was conducted in 2015. To ensure data comparability, we exclude the Philippines from our analysis. Our study focuses on Bolivia, Colombia, Ghana, and Vietnam, as these countries implemented relevant compulsory education reforms during the period of interest.\footnote{\citet{world_bank_bolivia_2012}, \citet{world_bank_colombia_2012}, \citet{world_bank_ghana_2013}, \citet{world_bank_vietnam_2012}.} In all surveyed countries, the target population consists of urban residents aged 15 to 64.
+
+
+\subsection{Measures of non-cognitive skills}
+The STEP data includes measures of personality, behavior, and preferences. The personality measures are based on the Big Five taxonomy of personality traits, which includes agreeableness, conscientiousness, extraversion, openness to experience, and emotional stability. These dimensions have been derived from a factor analysis of a broad personality inventory and have been replicated across cultures \parencite{allport_trait-names_1936, john_big_1999, almlund_chapter_2011}.
+
+The STEP data includes measures of three key behaviors: grit, hostile attribution bias, and decision-making patterns. Grit captures perseverance and passion for long-term goals \parencite{duckworth_grit_2007}. Although related to conscientiousness, grit has demonstrated predictive validity beyond this personality trait. Hostile attribution bias refers to the tendency to perceive hostile intent in others' behavior, even when it is ambiguous or benign, and is associated with aggressive behavior \parencite{dodge_social_2003, dodge_translational_2006}. Decision-making patterns are measured through alternative solution thinking and consequential thinking.
+
+The former captures the ability to consider multiple options when making decisions, while the latter captures the tendency to consider future consequences for oneself or others. These decision-making patterns are evaluated using four survey questions: \textit{Do you think about how the things you do will affect you in the future?, Do you think carefully before you make an important decision?, Do you ask for help when you don’t understand something?, Do you think about how the things you will do will affect others?}
+
+
+
+In summary, the household questionnaire includes three items for each personality trait based on the short Big Five Inventory by \citet{john_big_1999} \parencite[see][for a validation]{lang_short_2011}, three items from the Grit Scale \parencite{duckworth_grit_2007}, two items assessing hostile attribution bias, and four items measuring decision-making patterns \parencite{mann_melbourne_1997}. While the items for grit, hostile attribution bias, and decision-making patterns represent subsets of the original scales, their selection was guided by expert input: The developers of the Grit Scale (Angela Duckworth) and the hostile attribution bias scale (Kenneth Dodge) were consulted during the STEP survey design process. A pilot study informed the adoption of a four-point scale, ranging from \textit{almost always} to \textit{almost never}.
+
+The STEP data, further, includes a hypothetical lottery choice between a safe and a risky option (\textit{Get \$120 for sure or flip a coin for \$0 or \$360}) and a hypothetical choice between a smaller amount of money today versus a larger amount of money next year (\textit{Receive \$1200 today or \$1800 in one year}).\footnote{
+	There was a mistake in the questionnaire for Colombia in the items measuring the time preference (3.240.000 Pesos have been switched with 3.456.000 Pesos). Therefore, instead of the planned measure based on three hypothetical choices, we only make use of the first out of the three questions and create binary measures for economic preferences. The results are qualitatively the same when we use the measures based on all three questions and exclude Colombia for estimating the effect on the time preference.
+} \citet{falk_preference_2023} showed that measures from hypothetical survey questions can predict real choices in corresponding, incentivized experiments. Based on these hypothetical choices, we construct measures for risk and time preferences as dummy variables that indicate whether the risky/patient option was chosen.
+
+The measures used in this analysis are generated by standardizing the average score from the dimension-specific questions on Big Five personality traits, grit, hostile attribution bias, and decision-making patterns. Time and risk preferences are captured by a dummy variable indicating whether an individual chooses the patient or risky option, respectively. Following \citet{laajaj_challenges_2019}, we correct the STEP data for acquiescence response bias, which refers to an individual's tendency to generally agree or disagree with survey items. This correction is possible because some questions are reverse-coded, For example, \textit{``Are you relaxed during stressful situations?''} and \textit{``Do you get nervous easily?''} both assess emotional stability, but the second question is reverse-coded. We apply the correction method outlined in the Materials and Methods section of \citet{laajaj_challenges_2019} to adjust the measures of personality traits, grit, hostile attribution bias, and decision-making patterns for this bias.\footnote{As additional information on the final non-cognitive skill measures, we provide pairwise Pearson correlation coefficients between these and individual characteristics, e.g. age or gender, together with the correlations' signs found in the literature in Table \ref{tab:correlations}.}
+
+
+
+\subsection{Estimation sample}
+
+To create the estimation sample, we classify individuals in our sample as treated or control individuals based on their year of birth, country, and the first affected birth cohort of the respective reform, which we refer to as the pivotal cohort. Individuals born during the pivotal cohort year or later are assigned to the treatment group, while those born before the pivotal cohort are assigned to the control group:
+
+{\centering
+	$ \displaystyle
+	\begin{aligned}
+		D_{i, country} = \mathds{1}_{\{\text{birth-year}_{i, country} \text{ } \geq \text{ cohort-cutoff}_{country}\}}
+	\end{aligned}
+	$
+\par}%Necessary for centering to work
+
+In our analysis, we compare all individuals in the treatment group with all individuals in the control group, irrespective of their educational level. Since all individuals in the control group are older than those in the treatment group at the time of data collection, they have had more time to complete any advanced education. To address this, we restrict our sample to individuals older than 23, ensuring that individuals in the treatment group have likely finished their advanced education. However, due to the timing of the reforms, this restriction affects only a few individuals. A robustness check, excluding this age restriction, is provided in the Appendix (Tables \ref{tab:all_age_educ} to \ref{tab:all_age_prefs}). Additionally, we create 3, 5, and 10-years samples. The \textit{x}-sample is restricted to individuals born within \textit{x} years before or after the cohort cutoff---the cutoff, which separates affected and unaffected individuals. This leaves us with 5,252 observations in the 10-year sample, 2,983 observations in the 5-year sample, and 1,815 observations in the 3-year sample (see Tables \ref{tab:nobs_5y} to \ref{tab:nobs_10y} for sample sizes per reform).\footnote{For data preparation and analysis we use the template for reproducible research in economics by \citet{von_gaudecker_templates_2019}.}
+
+\begin{table}[htbp]
+	\caption{Descriptive statistics}
+	\label{tab:descriptives}
+	\centering
+	\begin{threeparttable}
+		\input{../bld/python/tables/descriptive_statistics.tex}
+		\begin{tablenotes}
+			\footnotesize
+			\item \textit{Notes:} The sample contains individuals who are born within five years before or after a cohort cutoff and are older than 23. Standard errors are clustered on the reform $\times$ birth-year level. \textit{Data: STEP}
+		\end{tablenotes}
+	\end{threeparttable}
+\end{table}
+
+Table \ref{tab:descriptives} shows descriptive statistics for individuals in the 5-year sample, comparing those unaffected (control group) and affected (treatment group) by the reform. Average years of education per reform are displayed in Table \ref{tab:years_educ_per_reform} in the Appendix. Since individuals in the treatment group are, by design, younger, we will account for this in our empirical approach. On average, there is no significant difference in years of education between the treatment and control groups. As we will discuss in the results section, this lack of differences is due to cohort trends and the fact that the first four cohorts in Vietnam were only partially treated. After taking this into account, the treated individuals, on average, have significantly more years of education. Additionally, parental involvement in education is higher in the treatment group, with no significant differences observed in other characteristics. Notably, one quarter of children worked before the age of 15, and this proportion remains unchanged by the introduction of compulsory schooling reforms.

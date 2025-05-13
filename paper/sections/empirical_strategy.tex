@@ -1,0 +1,96 @@
+
+\subsection{Research design} \label{subsec:conc_frame}
+We hypothesize that reforms expanding mandatory education affect non-cognitive skills and, hence, we expect different levels of skills for treated individuals and untreated individuals.
+
+The effect of compulsory schooling reforms on skills could, in principle, be identified from a simple comparison of the average skill level of the first cohort affected by the reform, which we refer to as the pivotal cohort, with the youngest cohort  not affected by the reform, assuming both cohorts were otherwise exposed to the same conditions influencing skill formation (e.g., income, institutions, nutrition, and education quality).
+While this assumption may approximately hold for two consecutive cohorts, it becomes less plausible for cohorts born several years apart due to time trends in factors that affect skill formation. Given that cohort sizes in the dataset are too small to reliably estimate the average treatment effect by comparing only the two adjacent cohorts, we extend the analysis to include multiple cohorts in both treatment and control groups. This necessitates controlling for cohort trends to account for evolving conditions that influence skill accumulation. As we explain below, we address this by specifying flexible cohort trends. Note that by controlling for cohort trends, we also control for age trends in skills as age and cohort are collinear in the absence of panel data.\footnote{Our data is plotted in Figure \ref{fig:RD-style} in addition to linear cohort trends.}
+
+
+Our primary interest lies in understanding the effect of the reforms on skills. As a direct consequence of the reforms, years of education are expected to increase for individuals who, in the absence of the reform, would have left school before meeting the new compulsory education  requirements. Some students might even choose to continue their education beyond the mandatory years, inspired or motivated by their experiences during compulsory schooling. At the same time, spillover effects may arise for children who would have surpassed the new mandatory years of education even in absence of the reform---for example, if they aim to distinguish themselves from peers who only complete the increased mandatory education. Thus, the reforms likely influence educational attainment for multiple types of students.
+
+
+In section \ref{sec:mechanisms}, we explore additional pathways through which educational expansions might affect non-cognitive skills, beyond changes in years of education. These potential mechanisms include improvements in educational quality, shifts in the perceived importance of education, and changes in ability mixing within schools. However, our empirical strategy is designed to capture the overall impact of increased mandatory education, rather than isolating the effects of individual mechanisms.
+
+
+
+\subsection{Main empirical design} \label{subsec:emp_main}
+
+Our identification strategy is to use within-country variation in mandatory years of education. From an individual's perspective, the timing of the reform can be considered as-good-as-random, providing a quasi-experimental design.
+
+Individuals are classified into a control and a treatment group:
+
+{\centering
+	$ \displaystyle
+	\begin{aligned}
+		D_{i, country} = \mathds{1}_{\{\text{birth-year}_{i, country} \text{ } \geq \text{ cohort-cutoff}_{country}\}}
+	\end{aligned}
+	$
+\par}%Necessary for centering to work
+
+
+Our empirical design exploits a discontinuous change in the outcome variable when the year of birth reaches the cohort cutoff. Under certain conditions, changes in the observed outcome at this cutoff can be attributed to the change in treatment status. The key identifying assumption is that potential outcomes evolve smoothly around the cutoff. If a jump in potential outcomes occurred independently of the reform at the threshold, it would be impossible to disentangle the causal effect of treatment from pre-existing changes. This assumption can be interpreted as the impossibility of manipulating treatment assignment. It is important to note that our design only allows causal inference at or near the cutoff value, as discussed in section \ref{subsec:conc_frame}.
+
+
+{\centering
+	$ \displaystyle
+	\begin{aligned}
+		\mathbb{E}[Skill^d|X=x] \text{ continuous in } x \text{ around cutoff } c \text{ for } d \in {0,1}
+	\end{aligned}
+	$
+\par}%Necessary for centering to work
+
+
+Can treatment be considered exogenous in our setting? While treatment was not strictly random---for instance, if some parents deliberately tried to postpone or advance the birth of their children---the implementation of a reform typically follows a complex political process that unfolds over several years. This makes the precise timing of a reform effectively random for a given birth cohort. Therefore, from an individual's perspective, treatment assignment can be considered exogenous.
+
+Ideally, we would compare individuals just at the cutoff---the youngest untreated and the oldest treated cohort---as they are likely to be most similar in other observed or unobserved characteristics. However, given the nature of our data, such a narrow sample would be too small for reliable inference. Therefore, we expand the sample to include a broader range of birth cohorts and estimate cohort trends in skills. Since skills tend to be relatively stable over a limited age range, we are confident that this approach provides a valid estimate of the treatment effect.
+
+Our empirical design resembles a regression discontinuity design (RDD) \parencite{thistlethwaite_regression-discontinuity_1960} in that it exploits a discontinuous jump in the outcome variable at a cutoff point,  with the year of birth serving as the forcing variable. This approach is widely used in the education literature. However, our empirical design is not identical to an RDD, as we estimate cohort trends for each reform separately and aggregate the effects to obtain an overall reform effect.\footnote{
+	An alternative to our main empirical approach would be to use an instrumental variable (IV) design, where an indicator for being affected by a reform serves as the instrument for years of education. The aim of this approach would be to estimate the effect of one additional year of education, rather than the overall reform effect. However, we prefer the previously outlined empirical strategy over an IV approach, due to concerns raised in the recent literature regarding IV assumptions and the questionable exclusion restriction. In our context, with cross-sectional data from multiple countries and reforms, the IV assumptions could only be valid conditional on cohort and reform fixed effects. However, \citet{blandhol_when_2022} showed that the IV approach is problematic in the presence of covariates and heterogeneous treatment effects. They found that a 2SLS estimate may not even be a positively weighted average of causal effects in this case unless based on a fully saturated model. A fully saturated model in our case would risk sever severe overfitting. Moreover, the exclusion restriction assumes that reforms increasing mandatory education affect skills skills solely through years of education, but as discussed in subsection \ref{subsec:conc_frame} and section \ref{sec:mechanisms}, there are reasons to question this assumption. Therefore, we opt for our previously described approach, as it reliably provides an overall average treatment effect of increasing years of compulsory education.
+}
+
+We estimate variants of the following baseline regression model, where $\textit{skill}_{icr}$ represents a non-cognitive skill of individual $i$ from birth cohort $c$, who belongs to either the control or treatment group of reform $r$.
+
+
+\begin{align} \label{eq:rdd}
+	\begin{split}
+		\text{Skill}_{icr} = & \beta_1 \text{Treated}_{cr} + \beta_2 \text{Partially-treated}_{cr} + \sum_{r} \gamma_{1r} \text{Reform}_{r} \\
+		& + f(\text{Cohort}_{icr} \times \text{Reform}_r) \\
+		& + \text{Treated}_{cr} \times f(\text{Cohort}_{icr} \times \text{Reform}_r) \\
+		& + \varepsilon_{icr}
+	\end{split}
+\end{align}
+
+
+To account for systematic differences in skill levels across countries and calendar time, we include reform fixed effects. Moreover, to account for systematic differences in cohort trends across countries, we include interactions between the cohort and reform fixed effects. Additionally, we allow for distinct trends before and after a reform, as education may affect not only skill levels but also the rate of skill development. As described in section \ref{sec:vietnam}, the implementation of the compulsory schooling reform in Vietnam was gradual rather than immediate. Following \citet{cornelissen_multigenerational_2022}, we classify the first four treated cohorts in Vietnam as partially treated.
+
+To ensure balance across treatment and control group in observed characteristics, we estimate equation (\ref{eq:rdd}) with these characteristics as the dependent variable. Table \ref{tab:balanced} shows that the sample is balanced across most observed characteristics, except for the number of siblings at age twelve. Therefore, we control for the number of siblings at age twelve in our analysis.
+
+
+\begin{table}[htbp]
+	\caption{Balanced sample}
+	\label{tab:balanced}
+	\centering
+	\begin{threeparttable}
+			\input{../bld/python/tables/balanced_sample.tex}
+		\begin{tablenotes}
+			\footnotesize
+			\item \textit{Notes:} Individuals born within five years before or after a cohort cutoff and older than 23. Standard errors are clustered on the reform $\times$ birth-year level. \textit{Data: STEP}
+		\end{tablenotes}
+	\end{threeparttable}
+\end{table}
+
+
+
+
+To sum up, as the validity of our estimate for the average treatment effect depends on the adequate representation of $\mathbb{E}[Skill|X]$ around the cutoff, our baseline specification identifies the causal effect of expanding compulsory education if (i) cohort trends are well approximated and (ii) no other event affects the jump at the cutoff.
+
+
+\subsection{Expected effects of compulsory schooling on non-cognitive skills} \label{subsec:exp_effects}
+
+Before presenting the results of our main analysis, we briefly outline the expected findings based on existing literature and the definitions of the skills in question. Despite the limited number of causal studies discussed in the introduction, expectations can be formed from correlations between educational attainment and non-cognitive skills identified in previous research. These correlations may reflect causal effects, consequences of educational attainment, or spurious relationships.
+
+Based on the summary in \citet{almlund_chapter_2011}, we might expect education to increase openness to experience, conscientiousness, and emotional stability, while its impact on extraversion and agreeableness may be negligible. We anticipate that decision-making patterns would improve with more compulsory education, as education enhances cognitive skills that facilitate the consideration of alternative solutions and the evaluation of future consequences.
+
+A positive effect on grit is also plausible, as suggested by \citet{alan_ever_2019}. Hostile attribution bias, which may be inversely related to trust, could decline with increased education, given the positive correlation between trust and education found in previous research \parencite{oreopoulos_priceless_2011, charron_does_2016}. Moreover, \citet{yang_does_2019} and \citet{kan_educated_2021} report a (weak) causal link between education and trust, supporting the expectation of a negative effect of compulsory schooling reforms on hostile attribution bias.
+
+For economic preferences, previous causal evidence is mixed \parencite{dohmen_effect_2022, tawiah_does_2022, jung_does_2015, jung_does_2021}. However, \citet{alan_fostering_2018} show that a school-based curriculum intervention increases patience, and \citet{sutter_impatience_2013} find that patient children exhibit better school conduct, even though they do not directly study the link with educational attainment. These findings suggest a potential positive effect of the reforms on patience. In contrast, we do not have a clear expectation regarding the impact on willingness to take risks.

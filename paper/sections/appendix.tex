@@ -1,0 +1,375 @@
+\section{Additional data details}
+\setcounter{table}{0}
+\setcounter{figure}{0}
+\renewcommand{\thetable}{\Alph{section}.\arabic{table}}
+\renewcommand\thefigure{\Alph{section}.\arabic{figure}}
+
+
+% CORRELATIONS IN THE LITERATURE AND IN OUR DATA
+\begin{table}[htbp]
+	\centering
+	\caption{Correlations in the literature and in our data}
+	\label{tab:correlations}
+	\input{latex_input/correlations_table_w_stars_and_references.tex}
+\end{table}
+
+
+% DESCRIPTIVES
+\begin{table}[htbp]
+	\caption{Number of observations - 5 years}
+	\label{tab:nobs_5y}
+	\centering
+	\begin{threeparttable}
+		\input{../bld/python/tables/obs_per_reform_final_5y.tex}
+		\begin{tablenotes}
+			\small
+			\item \textit{Notes:} The sample contains individuals who are born within five years before or after a cohort cutoff and are older than 23. \textit{Data: STEP}
+		\end{tablenotes}
+	\end{threeparttable}
+\end{table}
+
+\begin{table}[htbp]
+	\caption{Number of observations - 3 years}
+	\label{tab:nobs_3y}
+	\centering
+	\begin{threeparttable}
+		\input{../bld/python/tables/obs_per_reform_final_3y.tex}
+		\begin{tablenotes}
+			\small
+			\item \textit{Notes:} The sample contains individuals who are born within three years before or after a cohort cutoff and are older than 23. \textit{Data: STEP}
+		\end{tablenotes}
+	\end{threeparttable}
+\end{table}
+
+\begin{table}[htbp]
+	\caption{Number of observations - 10 years}
+	\label{tab:nobs_10y}
+	\centering
+	\begin{threeparttable}
+		\input{../bld/python/tables/obs_per_reform_final_10y.tex}
+		\begin{tablenotes}
+			\small
+			\item \textit{Notes:} The sample contains individuals who are born within ten years before or after a cohort cutoff and are older than 23. \textit{Data: STEP}
+		\end{tablenotes}
+	\end{threeparttable}
+\end{table}
+
+
+% DESCRIPTIVES PER REFORM
+\begin{table}[htbp]
+	\caption{Average years of education per reform}
+	\label{tab:years_educ_per_reform}
+	\centering
+	\begin{threeparttable}
+		\input{../bld/python/tables/descriptive_statistics_years_educ.tex}
+		\begin{tablenotes}
+			\small
+			\item \textit{Notes:} Descriptive statistics based on individuals who were born within five years before or after a cohort cutoff and who are older than 23. \textit{Data: STEP}
+		\end{tablenotes}
+	\end{threeparttable}
+\end{table}
+
+
+
+% TYPICAL RD-STYLE GRAPH
+\begin{figure}
+	\centering
+	\caption{The effect of increasing mandatory education}
+	\label{fig:RD-style}
+	\begin{subfigure}{0.45\linewidth}
+		\includegraphics[width=\linewidth, trim = {1.2cm 4cm 0.2cm 0.2cm}, clip]{../bld/python/figures/RDD_plot_years_educ.png}
+		\caption{Years of education}
+	\end{subfigure}
+
+	\begin{subfigure}{0.45\linewidth}
+		\includegraphics[width=\linewidth, trim = {1.2cm 4cm 0.2cm 0.2cm}, clip]{../bld/python/figures/RDD_plot_agreeableness_av_s_abcorr.png}
+		\caption{Agreeableness}
+	\end{subfigure}\hfill
+	\begin{subfigure}{0.45\linewidth}
+		\includegraphics[width=\linewidth, trim = {1.2cm 4cm 0.2cm 0.2cm}, clip]{../bld/python/figures/RDD_plot_conscientiousness_av_s_abcorr.png}
+		\caption{Conscientiousness}
+	\end{subfigure}
+
+	\begin{subfigure}{0.45\linewidth}
+		\includegraphics[width=\linewidth, trim = {1.2cm 4cm 0.2cm 0.2cm}, clip]{../bld/python/figures/RDD_plot_extraversion_av_s_abcorr.png}
+		\caption{Extraversion}
+	\end{subfigure}\hfill
+	\begin{subfigure}{0.45\linewidth}
+		\includegraphics[width=\linewidth, trim = {1.2cm 4cm 0.2cm 0.2cm}, clip]{../bld/python/figures/RDD_plot_openness_av_s_abcorr.png}
+		\caption{Openness to experience}
+	\end{subfigure}
+
+	\begin{subfigure}{0.45\linewidth}
+		\includegraphics[width=\linewidth, trim = {1.2cm 4cm 0.2cm 0.2cm}, clip]{../bld/python/figures/RDD_plot_stability_av_s_abcorr.png}
+		\caption{Emotional stability}
+	\end{subfigure}\hfill
+	\begin{subfigure}{0.45\linewidth}
+		\includegraphics[width=\linewidth, trim = {1.2cm 4cm 0.2cm 0.2cm}, clip]{../bld/python/figures/RDD_plot_decision_av_s_abcorr.png}
+		\caption{Decision-making patterns}
+	\end{subfigure}
+
+	\begin{subfigure}{0.45\linewidth}
+		\includegraphics[width=\linewidth, trim = {1.2cm 4cm 0.2cm 0.2cm}, clip]{../bld/python/figures/RDD_plot_grit_av_s_abcorr.png}
+		\caption{Grit}
+	\end{subfigure}\hfill
+	\begin{subfigure}{0.45\linewidth}
+		\includegraphics[width=\linewidth, trim = {1.2cm 4cm 0.2cm 0.2cm}, clip]{../bld/python/figures/RDD_plot_hostile_av_s_abcorr.png}
+		\caption{Hostile attribution bias}
+	\end{subfigure}
+
+	\begin{subfigure}{0.45\linewidth}
+		\includegraphics[width=\linewidth, trim = {1.2cm 4cm 0.2cm 0.2cm}, clip]{../bld/python/figures/RDD_plot_patience_binary.png}
+		\caption{Patience (binary)}
+	\end{subfigure}\hfill
+	\begin{subfigure}{0.45\linewidth}
+		\includegraphics[width=\linewidth, trim = {1.2cm 4cm 0.2cm 0.2cm}, clip]{../bld/python/figures/RDD_plot_risk_binary.png}
+		\caption{Risk willingness (binary)}
+	\end{subfigure}
+
+	\caption*{\footnotesize \textit{Notes:} Averages of considered outcomes across year of birth. \textit{Data: STEP}}
+\end{figure}
+
+
+% OPTIMAL BANDWIDTHS
+\begin{table}[htbp]
+	\caption{MSE-optimal bandwidths by \citet{calonico_rdrobust_2023}}
+	\label{tab:bandwidth}
+	\centering
+	\begin{threeparttable}
+		\input{../bld/python/tables/with_partially_treated/results_optimal_bandwidth_CCT_bandwidths_only.tex}
+		\begin{tablenotes}
+			\footnotesize
+			\item \textit{Notes:} The sample is restricted to individuals who are older than 23 and to the following reforms: Bolivia 1994, Colombia 1991, Ghana 1961, Ghana 1987, Vietnam 1991. The estimates stem from the \textit{flexible model} which has linear cohort trends and allows for different slopes around the cutoff. Standard errors are cluster robust on country-reform $\times$ birth-year level. \textit{Data: STEP.} $^{***} p < 0.01, ^{**} p < 0.05, ^{*} p < 0.1$
+		\end{tablenotes}
+	\end{threeparttable}
+\end{table}
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newpage
+\section{Robustness of main findings}
+\setcounter{table}{0}
+\setcounter{figure}{0}
+\renewcommand{\thetable}{\Alph{section}.\arabic{table}}
+\renewcommand\thefigure{\Alph{section}.\arabic{figure}}
+
+% SINGLE REFORMS
+\begin{table}[htbp]
+	\caption{Analysis with single reforms}
+	\label{tab:single_reforms}
+	\centering
+	\begin{threeparttable}
+		\footnotesize
+		\input{../bld/python/tables/with_partially_treated/single_reforms/results_single_reforms.tex}
+		\begin{tablenotes}
+			\footnotesize
+			\item \textit{Notes:} The estimates stem from the 5 years sample and the \textit{linear model} which has a linear cohort trend. Standard errors are cluster robust on reform $\times$ birth-year level. \textit{Data: STEP}
+		\end{tablenotes}
+	\end{threeparttable}
+\end{table}
+
+
+% WITHOUT AGE RESTRICTION
+\begin{table}[htbp]
+	\caption{No age restriction - Years of education}
+	\label{tab:all_age_educ}
+	\centering
+	\begin{threeparttable}
+		\footnotesize
+		\input{../bld/python/tables/with_partially_treated/without_restricting_age/results_with_partially_treated_years_educ_tabular.tex}
+		\begin{tablenotes}
+			\footnotesize
+			\item \textit{Notes:} Estimated average treatment effects of compulsory schooling reforms. The sample is restricted to individuals who are older than 23 and to the following reforms: Bolivia 1994, Colombia 1991, Ghana 1961, Ghana 1987, Vietnam 1991. The \textit{linear/quadratic/cubic} model consists of reform specific \textit{linear/quadratic/cubic} cohort trends. Standard errors are cluster robust on reform $\times$ birth-year level. \textit{Data: STEP} $^{***} p < 0.01, ^{**} p < 0.05, ^{*} p < 0.1$
+		\end{tablenotes}
+	\end{threeparttable}
+\end{table}
+
+\begin{table}[htbp]
+	\caption{No age restriction - Personality traits and behaviors}
+	\label{tab:all_age_ncogn}
+	\centering
+	\begin{threeparttable}
+		\footnotesize
+		\input{../bld/python/tables/with_partially_treated/without_restricting_age/results_with_partially_treated_ncogn_skills_tabular.tex}
+		\begin{tablenotes}
+			\footnotesize
+			\item \textit{Notes:} Estimated average treatment effects of compulsory schooling reforms. Measures are standardized. The sample is restricted to individuals who are older than 23 and to the following reforms: Bolivia 1994, Colombia 1991, Ghana 1961, Ghana 1987, Vietnam 1991. The \textit{linear/quadratic/cubic} model consists of reform specific \textit{linear/quadratic/cubic} cohort trends. Standard errors are cluster robust on reform $\times$ birth-year level. \textit{Data: STEP} $^{***} p < 0.01, ^{**} p < 0.05, ^{*} p < 0.1$
+		\end{tablenotes}
+	\end{threeparttable}
+\end{table}
+
+\begin{table}[htbp]
+	\caption{No age restriction - Preferences}
+	\label{tab:all_age_prefs}
+	\centering
+	\begin{threeparttable}
+		\footnotesize
+		\input{../bld/python/tables/with_partially_treated/without_restricting_age/results_with_partially_treated_preferences_binary_tabular.tex}
+		\begin{tablenotes}
+			\footnotesize
+			\item \textit{Notes:} Estimated average treatment effects of compulsory schooling reforms. Measures are binary. The sample is restricted to individuals who are older than 23 and to the following reforms: Bolivia 1994, Colombia 1991, Ghana 1961, Ghana 1987, Vietnam 1991. The \textit{linear/quadratic/cubic} model consists of reform specific \textit{linear/quadratic/cubic} cohort trends. Standard errors are cluster robust on reform $\times$ birth-year level. \textit{Data: STEP} $^{***} p < 0.01, ^{**} p < 0.05, ^{*} p < 0.1$
+		\end{tablenotes}
+	\end{threeparttable}
+\end{table}
+
+
+
+% PLACEBO TEST
+\begin{table}[htbp]
+	\caption{Placebo test}
+	\label{tab:placebo}
+	\centering
+	\begin{threeparttable}
+		\input{../bld/python/tables/placebo_test/placebo_test.tex}
+		\begin{tablenotes}
+			\footnotesize
+			\item \textit{Notes:} The sample is restricted to individuals born within 5 years before or after the placebo reform cutoff. Placebo reforms are the true reforms plus 7 years. The estimates stem from the \textit{linear model} which has linear cohort trends. Standard errors are cluster robust on country-placebo-reform $\times$ birth-year level. \textit{Data: STEP.} $^{***} p < 0.01, ^{**} p < 0.05, ^{*} p < 0.1$
+		\end{tablenotes}
+	\end{threeparttable}
+\end{table}
+
+
+% COMBINED TABLE
+\begin{table}[htbp]
+	\caption{Robustness checks - Personality traits and behaviors}
+	\label{tab:robust_ncogn}
+	\centering
+	\begin{threeparttable}
+		\footnotesize
+		\input{latex_input/combined_robustness_checks_ncogn.tex}
+		\begin{tablenotes}
+			\footnotesize
+			\item \textit{Notes:} Estimated average treatment effects of compulsory schooling reforms. Measures are standardized. The sample is restricted to individuals who are older than 23 and to the following reforms: Bolivia 1994, Colombia 1991, Ghana 1961, Ghana 1987, Vietnam 1991. Column (1) contains estimates from classifying individuals born one year before the pivotal cohort as partially treated and using the \textit{linear} model. Column(2) contains estimates from an \textit{inflexible} model, which consists of reform specific linear cohort trends that are not flexible at the cutoff, i.e. the model imposes the same slope before and after the cutoff. Column(3) contains estimates from replacing survey items based on \citet{laajaj_challenges_2019}. Standard errors are cluster robust on reform $\times$ birth-year level. \textit{Data: STEP} $^{***} p < 0.01, ^{**} p < 0.05, ^{*} p < 0.1$
+		\end{tablenotes}
+	\end{threeparttable}
+\end{table}
+
+\begin{table}[htbp]
+	\caption{Robustness checks - Preferences}
+	\label{tab:robust_prefs}
+	\centering
+	\begin{threeparttable}
+		\footnotesize
+		\input{latex_input/combined_robustness_checks_preferences_binary.tex}
+		\begin{tablenotes}
+			\footnotesize
+			\item \textit{Notes:} Estimated average treatment effects of compulsory schooling reforms. Measures are binary. The sample is restricted to individuals who are older than 23 and to the following reforms: Bolivia 1994, Colombia 1991, Ghana 1961, Ghana 1987, Vietnam 1991. Column (1) contains estimates from classifying individuals born one year before the pivotal cohort as partially treated and using the \textit{linear} model. Column(2) contains estimates from an \textit{inflexible} model, which consists of reform specific linear cohort trends that are not flexible at the cutoff, i.e. the model imposes the same slope before and after the cutoff. Standard errors are cluster robust on reform $\times$ birth-year level. \textit{Data: STEP} $^{***} p < 0.01, ^{**} p < 0.05, ^{*} p < 0.1$
+		\end{tablenotes}
+	\end{threeparttable}
+\end{table}
+
+
+
+% LEAVE ONE OUT
+\begin{figure}
+	\centering
+	\caption{Main results leaving one reform out}
+	\label{fig:leave_one_out}
+	\begin{subfigure}{0.45\linewidth}
+		\includegraphics[width=\linewidth, trim = {1.5cm 2cm 0.5cm 5.2cm}, clip]{../bld/python/figures/leave_one_out/results_figure_two_xaxis_leave_Ghana1961_out.png}
+		\caption{Leaving Ghana 1961 out}
+		\label{fig:a}
+	\end{subfigure}\hfill
+	\begin{subfigure}{0.45\linewidth}
+		\includegraphics[width=\linewidth, trim = {1.5cm 2cm 0.5cm 5.2cm}, clip]{../bld/python/figures/leave_one_out/results_figure_two_xaxis_leave_Ghana1987_out.png}
+		\caption{Leaving Ghana 1987 out}
+		\label{fig:b}
+	\end{subfigure}
+
+	\begin{subfigure}{0.45\linewidth}
+		\includegraphics[width=\linewidth, trim = {1.5cm 2cm 0.5cm 5.2cm}, clip]{../bld/python/figures/leave_one_out/results_figure_two_xaxis_leave_Colombia1991_out.png}
+		\caption{Leaving Colombia 1991 out}
+		\label{fig:c}
+	\end{subfigure}\hfill
+	\begin{subfigure}{0.45\linewidth}
+		\includegraphics[width=\linewidth, trim = {1.5cm 2cm 0.5cm 5.2cm}, clip]{../bld/python/figures/leave_one_out/results_figure_two_xaxis_leave_Vietnam1991_out.png}
+		\caption{Leaving Vietnam 1991 out}
+		\label{fig:d}
+	\end{subfigure}
+
+	\begin{subfigure}{0.45\linewidth}
+		\includegraphics[width=\linewidth, trim = {1.5cm 2cm 0.5cm 5.2cm}, clip]{../bld/python/figures/leave_one_out/results_figure_two_xaxis_leave_Bolivia1994_out.png}
+		\caption{Leaving Bolivia 1994 out}
+		\label{fig:e}
+	\end{subfigure}
+	\caption*{\footnotesize \textit{Notes:} Point estimates and 95\% confidence intervals. The sample is restricted to individuals who are older than 23 and to the following reforms: Bolivia 1994, Colombia 1991, Ghana 1961, Ghana 1987, Vietnam 1991. Observations from one reform each are left out. The estimates stem from the 5 years sample and the \textit{linear model} which has linear cohort trends. Standard errors are cluster robust on reform $\times$ birth-year level. \textit{Data: STEP}}
+\end{figure}
+
+
+
+\begin{table}[htbp]
+	\caption{Robustness to False Discovery Rate control}
+	\label{tab:qvalues}
+	\centering
+	\begin{threeparttable}
+		\input{../bld/python/tables/with_partially_treated/results_with_qvalues.tex}
+		\begin{tablenotes}
+			\footnotesize
+			\item \textit{Notes:} Main results from Tables \ref{tab:res_ncogn} and \ref{tab:res_prefs} with sharpened q-values by \citet{anderson_multiple_2008} as False Discovery Rate control for multiple hypothesis testing. The q-values are in square brackets, the cluster robust p-values are in parentheses.
+		\end{tablenotes}
+	\end{threeparttable}
+\end{table}
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newpage
+\section{Findings for additional outcomes} \label{sec:app_add_outcomes}
+\setcounter{table}{0}
+\setcounter{figure}{0}
+\renewcommand{\thetable}{\Alph{section}.\arabic{table}}
+\renewcommand\thefigure{\Alph{section}.\arabic{figure}}
+
+\begin{table}[htbp]
+	\caption{Literacy skills}
+	\label{tab:res_lit_test}
+	\centering
+	\begin{threeparttable}
+		\footnotesize
+		\input{../bld/python/tables/literacy_test_scores/results_tabular_partially.tex}
+		\begin{tablenotes}
+			\footnotesize
+			\item \textit{Notes:} Estimated average treatment effects of compulsory schooling reforms. Test scores are standardized. The sample is restricted to individuals who are older than 23 and to the following reforms: Bolivia 1994, Colombia 1991, Ghana 1961, Ghana 1987, Vietnam 1991. The \textit{linear/quadratic/cubic} model consists of reform specific \textit{linear/quadratic/cubic} cohort trends. Standard errors are cluster robust on reform $\times$ birth-year level. Estimates were obtained by plausible value method: point estimate $\theta = \frac{1}{M} \sum_{i=1}^{M}\theta_i$, where $\theta_i$ is the estimate from a regression of one plausible value $i$, and final error variance $ V = U + (1+\frac{1}{M}) B_M $, where imputation/measurement variance $B_M = \frac{1}{M-1} \sum_{i=1}^{M} (\theta - \theta_i)^2 $ and $U$ is the sampling variance (average of each plausible value's sampling variance). \textit{Data: STEP} $^{***} p < 0.01, ^{**} p < 0.05, ^{*} p < 0.1$
+		\end{tablenotes}
+	\end{threeparttable}
+\end{table}
+
+In addition to study the effects of compulsory education on non-cognitive skills, the STEP data set allows us to study the effect on cognitive skills. The data provides one objective measure for cognitive skills: a literacy proficiency assessment. This literacy test is assessing individuals' competence at accessing, interpreting, and evaluating information from written text. It has been designed and graded in close cooperation with the Educational Testing Service (ETS). We standardize the test scores as well for our analysis. In our analysis, we find a positive effect of the reforms on the literacy test score as can be seen in Table \ref{tab:res_lit_test}. In our preferred model (column (7)), individuals affected by the reform score 0.18 of a standard deviation better. Again, the first four treated cohorts in Vietnam do not experience this improvement.
+
+
+\begin{table}[htbp]
+	\caption{Wage returns to skills}
+	\label{tab:wage_returns}
+	\begin{center}
+		\input{../bld/python/tables/analysis_returns_ln_earnings_h_usd.tex}
+	\end{center}
+	\begin{tablenotes}
+		\footnotesize
+		\item \textit{Notes:} Dependent variable: ln(wage) in USD. The sample contains individuals in Bolivia, Colombia, Ghana, and Vietnam and who are older than 23. Standard errors are heteroskedasticity robust. \textit{Data: STEP}
+	\end{tablenotes}
+\end{table}
+
+
+\begin{table}[htbp]
+	\caption{Labor market outcomes}
+	\label{tab:lm_outcomes}
+	\centering
+	\begin{threeparttable}
+		\footnotesize
+		\input{../bld/python/tables/with_partially_treated/common_trend/results_All_lm_outcomes_one_table.tex}
+		\begin{tablenotes}
+			\footnotesize
+			\item \textit{Notes:} The sample is restricted to individuals who are older than 23 and to the following reforms: Bolivia 1994, Colombia 1991, Ghana 1961, Ghana 1987, Vietnam 1991. The \textit{linear/quadratic/cubic} model consists of reform specific \textit{linear/quadratic/cubic} cohort trends. Standard errors are cluster robust on reform $\times$ birth-year level. \textit{Data: STEP} $^{***} p < 0.01, ^{**} p < 0.05, ^{*} p < 0.1$
+		\end{tablenotes}
+	\end{threeparttable}
+\end{table}
+
+
+\begin{figure}[htbp]
+	\centering
+	\caption{Histogram of occupations}
+	\label{fig:occupations}
+	\includegraphics[width = 0.95\columnwidth, trim = {0cm 2cm 0.5cm 2cm}, clip]{../bld/python/figures/occupations_isco.png}
+	\caption*{\footnotesize \textit{Notes:} Occupations of individuals who worked within the past 12 months based on the International Standard Classification of Occupations 2008 (ISCO-08). \textit{Data: STEP}}
+\end{figure}

@@ -1,0 +1,6 @@
+@Unpublished{nc_skills_step_public2023,
+    Title  = {A project to estimate the causal effect of compulsory schooling reforms on non-cognitive skills using the STEP data.},
+    Author = {Antonia K. Entorf},
+    Year   = {2023},
+    Url    = {https://github.com/antoniaen/nc_skills_step_public}
+}
