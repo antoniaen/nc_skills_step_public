@@ -1,7 +1,9 @@
-# The impact of mandatory education on non-cognitive skills: Evidence from low- and middle-income countries
+# The effect of compulsory education on non-cognitive skills: Evidence from low- and middle-income countries
 
 [![pre-commit.ci status](https://results.pre-commit.ci/badge/github/antoniaen/nc_skills_step_public/main.svg)](https://results.pre-commit.ci/latest/github/antoniaen/nc_skills_step_public/main)
 [![image](https://img.shields.io/badge/code%20style-black-000000.svg)](https://github.com/psf/black)
+
+This repository contains all files for the analyses of our paper on the effect of reforms introducing or expanding compulsory education on non-cognitive skills. We use data from the World Bank's STEP Skills Measurement Program (STEP).
 
 ## Environment
 
@@ -26,17 +28,16 @@ $ conda activate nc_skills_step_public
 
 ## Data
 
-You have to save the original data in the folder `src/nc_skills_step_public/data`. You need the
-following documents
+You can find the original data files from the STEP Skills Measurement Household Surveys [here](https://microdata.worldbank.org/index.php/catalog/step/?page=1&ps=15&repo=step).
+
+To build the project you have to save the following documents
 
 - STEP Bolivia_working.dta
 - STEP Colombia_working.dta
 - STEP Ghana_working.dta
 - STEP Vietnam_working.dta
 
-which are public use data files from the STEP Skills Measurement Household Surveys that
-can be requested
-[here](https://microdata.worldbank.org/index.php/catalog/step/?page=1&ps=15&repo=step).
+in the folder `src/nc_skills_step_public/data`.
 
 ## Building the project
 
