@@ -3,7 +3,7 @@
 [![pre-commit.ci status](https://results.pre-commit.ci/badge/github/antoniaen/nc_skills_step_public/main.svg)](https://results.pre-commit.ci/latest/github/antoniaen/nc_skills_step_public/main)
 [![image](https://img.shields.io/badge/code%20style-black-000000.svg)](https://github.com/psf/black)
 
-This repository contains all files for the analyses of our paper on the effect of reforms introducing or expanding compulsory education on non-cognitive skills. We use data from the World Bank's STEP Skills Measurement Program (STEP).
+This repository contains all files for the analyses of our paper on the effect of reforms introducing or expanding compulsory education on non-cognitive skills. You can find the paper [here](https://doi.org/10.1016/j.econedurev.2025.102654). We use data from the World Bank's STEP Skills Measurement Program (STEP).
 
 ## Environment
 
