@@ -14,10 +14,18 @@ from nc_skills_step_public.data_management import prepare_STEP_data as prd
 @pytask.mark.depends_on(
     {
         "scripts": ["prepare_STEP_data.py"],
+        "Armenia": BLD / "python" / "data" / "Armenia_small.pkl",
         "Bolivia": BLD / "python" / "data" / "Bolivia_small.pkl",
         "Colombia": BLD / "python" / "data" / "Colombia_small.pkl",
+        "Georgia": BLD / "python" / "data" / "Georgia_small.pkl",
         "Ghana": BLD / "python" / "data" / "Ghana_small.pkl",
+        "Kenya": BLD / "python" / "data" / "Kenya_small.pkl",
+        "Laos": BLD / "python" / "data" / "Laos_small.pkl",
+        "Macedonia": BLD / "python" / "data" / "Macedonia_small.pkl",
+        "Sri_Lanka": BLD / "python" / "data" / "Sri_Lanka_small.pkl",
+        "Ukraine": BLD / "python" / "data" / "Ukraine_small.pkl",
         "Vietnam": BLD / "python" / "data" / "Vietnam_small.pkl",
+        "Yunnan": BLD / "python" / "data" / "Yunnan_small.pkl",
     },
 )
 @pytask.mark.produces(BLD / "python" / "data" / "STEP_data_clean.pkl")

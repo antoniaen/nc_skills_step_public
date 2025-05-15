@@ -8,11 +8,19 @@ from nc_skills_step_public.config import BLD, SRC
 countries_2012 = [
     "Bolivia",
     "Colombia",
+    "Laos",
+    "Sri_Lanka",
+    "Ukraine",
     "Vietnam",
+    "Yunnan",
 ]
 
 countries_2013 = [
+    "Armenia",
+    "Georgia",
     "Ghana",
+    "Kenya",
+    "Macedonia",
 ]
 
 for country in countries_2012 + countries_2013:
@@ -33,19 +41,20 @@ for country in countries_2012 + countries_2013:
         selected_variables = pd.read_excel(depends_on["selected_variables"])
         sel_vars_list_2012 = selected_variables["Name"].to_list()
 
-        # Add plausible values for the literacy test.
-        sel_vars_list_2012 += [
-            "PVLIT1",
-            "PVLIT2",
-            "PVLIT3",
-            "PVLIT4",
-            "PVLIT5",
-            "PVLIT6",
-            "PVLIT7",
-            "PVLIT8",
-            "PVLIT9",
-            "PVLIT10",
-        ]
+        # If available, add plausible values for the literacy test.
+        if country not in ["Yunnan", "Laos", "Sri_Lanka", "Macedonia"]:
+            sel_vars_list_2012 += [
+                "PVLIT1",
+                "PVLIT2",
+                "PVLIT3",
+                "PVLIT4",
+                "PVLIT5",
+                "PVLIT6",
+                "PVLIT7",
+                "PVLIT8",
+                "PVLIT9",
+                "PVLIT10",
+            ]
 
         # Experience of violence or abuse as a child is only available for Bolivia.
         if country == "Bolivia":
