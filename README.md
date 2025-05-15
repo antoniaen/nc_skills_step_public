@@ -32,10 +32,18 @@ You can find the original data files from the STEP Skills Measurement Household 
 
 To build the project you have to save the following documents
 
+- STEP Armenia_working.dta
 - STEP Bolivia_working.dta
 - STEP Colombia_working.dta
+- STEP Georgia_working.dta
 - STEP Ghana_working.dta
+- STEP Kenya_working.dta
+- STEP Laos_working.dta
+- STEP Macedonia_working.dta
+- STEP Sri_Lanka_working.dta
+- STEP Ukraine_working.dta
 - STEP Vietnam_working.dta
+- STEP Yunnan_working.dta
 
 in the folder `src/nc_skills_step_public/data`.
 
