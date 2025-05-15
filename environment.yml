@@ -1,5 +1,5 @@
 ---
-name: nc_skills_step_public_test
+name: nc_skills_step_public
 channels: [conda-forge, nodefaults]
 dependencies:
   - conda-lock
